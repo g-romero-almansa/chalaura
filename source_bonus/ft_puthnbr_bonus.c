@@ -6,7 +6,7 @@
 /*   By: gromero- <gromero-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 16:42:26 by gromero-          #+#    #+#             */
-/*   Updated: 2023/02/23 16:25:49 by gromero-         ###   ########.fr       */
+/*   Updated: 2023/02/27 10:31:18 by gromero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/ft_printf_bonus.h"
@@ -19,4 +19,6 @@ void	ft_puthnbr_bonus(unsigned int x, char *s, t_flag *f)
 		ft_hzero_bonus((long long)x, s, f);
 	if (f->flag_pot == 1)
 		ft_hdot_bonus((long long)x, s, f);
+	if (f->flag_m == 1)
+		ft_hminus_bonus((unsigned long long)x, s, f);
 }

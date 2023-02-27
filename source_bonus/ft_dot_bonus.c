@@ -6,14 +6,14 @@
 /*   By: gromero- <gromero-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/22 12:27:03 by gromero-          #+#    #+#             */
-/*   Updated: 2023/02/23 16:45:15 by gromero-         ###   ########.fr       */
+/*   Updated: 2023/02/27 10:27:22 by gromero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/ft_printf_bonus.h"
 
 void	ft_dot_bonus(long long num, t_flag *f)
 {
-	int p;
+	int		p;
 
 	p = 0;
 	if (num < 0)
@@ -38,7 +38,7 @@ void	ft_dot_bonus(long long num, t_flag *f)
 
 void	ft_hdot_bonus(long long num, char *s, t_flag *f)
 {
-	int p;
+	int		p;
 
 	p = 0;
 	if (num < 0)

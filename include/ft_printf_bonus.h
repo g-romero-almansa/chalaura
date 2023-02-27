@@ -6,7 +6,7 @@
 /*   By: gromero- <gromero-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:26:43 by gromero-          #+#    #+#             */
-/*   Updated: 2023/02/23 17:16:26 by gromero-         ###   ########.fr       */
+/*   Updated: 2023/02/27 11:14:09 by gromero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ void	ft_format_bonus(char const *s, t_flag *f, va_list arg);
 
 void	ft_format_flags_bonus(char const *s, t_flag *f);
 
+void	ft_format_flags2_bonus(char const *s, t_flag *f);
+
 void	ft_putchar_bonus(int c, t_flag *f);
 
 void	ft_putstr_bonus(char *s, t_flag *f);
@@ -59,9 +61,9 @@ void	ft_strspace_bonus(t_flag *f);
 
 void	ft_sharp_bonus(char *s, long long num, t_flag *f);
 
-void	ft_zero_bonus(long long  num, t_flag *f);
+void	ft_zero_bonus(long long num, t_flag *f);
 
-void	ft_hzero_bonus(long long  num, char *s, t_flag *f);
+void	ft_hzero_bonus(long long num, char *s, t_flag *f);
 
 void	ft_dot_bonus(long long num, t_flag *f);
 
@@ -86,5 +88,9 @@ int		ft_numlong_bonus(long long num);
 int		ft_hnumlong_bonus(long long num);
 
 void	ft_atoi_bonus(char const *s, t_flag *f);
+
+void	ft_nbr_bonus(long long num, t_flag *f);
+
+void	ft_hnbr_bonus(unsigned long long num, char *s, t_flag *f);
 
 #endif

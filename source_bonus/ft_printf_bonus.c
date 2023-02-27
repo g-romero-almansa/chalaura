@@ -6,7 +6,7 @@
 /*   By: gromero- <gromero-@student.42malaga.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/01 15:21:29 by gromero-          #+#    #+#             */
-/*   Updated: 2023/02/23 17:55:05 by gromero-         ###   ########.fr       */
+/*   Updated: 2023/02/27 11:13:25 by gromero-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/ft_printf_bonus.h"
@@ -33,31 +33,36 @@ void	ft_format_flags_bonus(char const *s, t_flag *f)
 			f->flag_h = 1;
 			f->i++;
 		}
-		else if (s[f->i] == '0')
-		{
-			f->flag_z = 1;
-			ft_atoi_bonus(s, f);
-		}
-		else if (s[f->i] == '.')
-		{
-			f->flag_pot = 1;
-			f->i++;
-			ft_atoi_bonus(s, f);
-		}
-		else if (s[f->i] == '-')
-		{
-			f->flag_m = 1;
-			f->i++;
-			ft_atoi_bonus(s, f);
-		}
-		else if (s[f->i] > '0' && s[f->i] <= '9')
-		{
-			f->flag_m = 1;
-			ft_atoi_bonus(s, f);
-		}
+		else
+			ft_format_flags2_bonus(s, f);
 	}
 }
 
+void	ft_format_flags2_bonus(char const *s, t_flag *f)
+{
+	if (s[f->i] == '0')
+	{
+		f->flag_z = 1;
+		ft_atoi_bonus(s, f);
+	}
+	else if (s[f->i] == '.')
+	{
+		f->flag_pot = 1;
+		f->i++;
+		ft_atoi_bonus(s, f);
+	}
+	else if (s[f->i] == '-')
+	{
+		f->flag_m = 1;
+		f->i++;
+		ft_atoi_bonus(s, f);
+	}
+	else if (s[f->i] > '0' && s[f->i] <= '9')
+	{
+		f->flag_m = 1;
+		ft_atoi_bonus(s, f);
+	}
+}
 
 void	ft_format_bonus(char const *s, t_flag *f, va_list arg)
 {
@@ -69,7 +74,7 @@ void	ft_format_bonus(char const *s, t_flag *f, va_list arg)
 		ft_putstr_bonus(va_arg(arg, char *), f);
 	else if (s[f->i] == 'p')
 	{
-		ft_putstr_bonus("0x", f);
+		ft_putstr("0x", f);
 		ft_putvoid_bonus(va_arg(arg, unsigned long long), f);
 	}
 	else if (s[f->i] == 'd' || s[f->i] == 'i')
@@ -121,6 +126,6 @@ int	ft_printf(char const *s, ...)
 /*#include <limits.h>
 int	main(void)
 {
-	ft_printf("%-2d\n", 11);
-	printf("%-2d\n", 11);
+	ft_printf("%#-2x\n", 15);
+	printf("%#-2x\n", 15);
 }*/
